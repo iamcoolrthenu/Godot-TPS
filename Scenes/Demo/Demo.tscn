@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckthwr0u40goc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d8xio"]
+sky_top_color = Color(0.30651, 0.43222, 0.742959, 1)
+sky_horizon_color = Color(0.549786, 0.659855, 0.842194, 1)
+ground_bottom_color = Color(0.305882, 0.431373, 0.741176, 1)
+ground_horizon_color = Color(0.54902, 0.658824, 0.843137, 1)
+
+[sub_resource type="Sky" id="Sky_y2pll"]
+sky_material = SubResource("ProceduralSkyMaterial_d8xio")
+
+[sub_resource type="Environment" id="Environment_44t71"]
+background_mode = 2
+sky = SubResource("Sky_y2pll")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qfvxk"]
+
+[node name="Demo" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_44t71")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_qfvxk")
