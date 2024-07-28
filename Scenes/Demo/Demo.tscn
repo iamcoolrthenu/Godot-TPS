@@ -1,4 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckthwr0u40goc"]
+[gd_scene load_steps=8 format=3 uid="uid://ckthwr0u40goc"]
+
+[ext_resource type="PackedScene" uid="uid://d1uvj2wkagrnl" path="res://Scenes/Demo/floor.blend" id="1_htsyd"]
+[ext_resource type="Script" path="res://Scenes/Demo/floor.gd" id="2_6itw5"]
+[ext_resource type="PackedScene" uid="uid://b8d3i2lh6hkdb" path="res://Scenes/Demo/wall.blend" id="2_la07r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d8xio"]
 sky_top_color = Color(0.30651, 0.43222, 0.742959, 1)
@@ -20,7 +24,33 @@ sky = SubResource("Sky_y2pll")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_44t71")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment"]
 shape = SubResource("WorldBoundaryShape3D_qfvxk")
+
+[node name="floor" parent="." instance=ExtResource("1_htsyd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("2_6itw5")
+
+[node name="floor2" parent="." instance=ExtResource("1_htsyd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1000, 0, 0)
+
+[node name="floor3" parent="." instance=ExtResource("1_htsyd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -1000)
+
+[node name="floor4" parent="." instance=ExtResource("1_htsyd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1000, 0, 0)
+
+[node name="floor5" parent="." instance=ExtResource("1_htsyd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1000, 0, -1000)
+
+[node name="floor6" parent="." instance=ExtResource("1_htsyd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1000, 0, -1000)
+
+[node name="wall" parent="." instance=ExtResource("2_la07r")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -630.304, 500, -1.6524)
+
+[node name="wall2" parent="." instance=ExtResource("2_la07r")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 375.195, 500, -0.471802)
+
+[node name="wall3" parent="." instance=ExtResource("2_la07r")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -0.092, 500, 500)

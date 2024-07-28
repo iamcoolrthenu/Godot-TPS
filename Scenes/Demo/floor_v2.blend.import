@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d1uvj2wkagrnl"
-path="res://.godot/imported/floor.blend-66137ffaea6a582112672aab9715f9e9.scn"
+uid="uid://d4lajbjpauuwc"
+path="res://.godot/imported/floor_v2.blend-374abbc14634f17288ff9b41ef7bc1f8.scn"
 
 [deps]
 
-source_file="res://Scenes/Demo/floor.blend"
-dest_files=["res://.godot/imported/floor.blend-66137ffaea6a582112672aab9715f9e9.scn"]
+source_file="res://Scenes/Demo/floor_v2.blend"
+dest_files=["res://.godot/imported/floor_v2.blend-374abbc14634f17288ff9b41ef7bc1f8.scn"]
 
 [params]
 
